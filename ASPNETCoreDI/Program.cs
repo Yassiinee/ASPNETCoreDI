@@ -1,7 +1,11 @@
+using ASPNETCoreDI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IEmailSenderService, EmailSenderService>();
 
 var app = builder.Build();
 
